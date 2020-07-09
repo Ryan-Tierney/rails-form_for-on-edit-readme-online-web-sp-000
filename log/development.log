@@ -928,3 +928,11 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/posts" for 173.18.197.157 at 2020-07-09 03:18:46 +0000
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.2ms)
+
+
