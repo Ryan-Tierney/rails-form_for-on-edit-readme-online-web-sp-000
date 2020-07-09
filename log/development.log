@@ -899,3 +899,23 @@ app/views/posts/edit.html.erb:3:in `_app_views_posts_edit_html_erb___15252121339
   Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
   Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.0ms)
+Started GET "/posts/5/edit" for 173.18.197.157 at 2020-07-09 03:18:24 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/5" for 173.18.197.157 at 2020-07-09 03:18:41 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FeyIJdSPYZbKE95peGosmmqw6jMzk9e1IQ4jO58JA0GTaBJLRtPoV6zsIzqoJmNj4csIUxwE8uwzvlC5ug+TPQ==", "post"=>{"title"=>"change title", "description"=>"change description\r\n"}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "change title"], ["description", "change description\r\n"], ["updated_at", "2020-07-09 03:18:41.772625"], ["id", 5]]
+  [1m[35m (36.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://174.138.35.103:51696/posts/5
+Completed 302 Found in 41ms (ActiveRecord: 37.4ms)
+
+
